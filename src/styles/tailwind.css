@@ -8,11 +8,24 @@
   * {
     @apply font-inter;
   }
+
+  province-list {
+    @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8;
+  }
+}
+
+body {
+  background-color: #eff1f5;
 }
 
 .summary {
   background: url('../assets/map.png') no-repeat center;
   background-size: cover;
+}
+
+.province-card {
+  background-color: #fff;
+  box-shadow: 4px 4px 17px rgba(0, 0, 0, 0.04);
 }
 
 @media (min-width: 640px) {

@@ -416,6 +416,31 @@ video {
   font-family: Inter;
 }
 
+province-list{
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (min-width: 640px){
+  province-list{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2rem;
+  }
+}
+
+@media (min-width: 768px){
+  province-list{
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px){
+  province-list{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -577,21 +602,41 @@ video {
   right: 0.25rem;
 }
 
-.my-10{
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
+.m-auto{
+  margin: auto;
 }
 
-.mb-5{
+.my-5{
+  margin-top: 1.25rem;
   margin-bottom: 1.25rem;
+}
+
+.mt-10{
+  margin-top: 2.5rem;
+}
+
+.mt-0\.5{
+  margin-top: 0.125rem;
+}
+
+.mt-0{
+  margin-top: 0px;
 }
 
 .mt-1{
   margin-top: 0.25rem;
 }
 
+.mb-5{
+  margin-bottom: 1.25rem;
+}
+
 .flex{
   display: flex;
+}
+
+.grid{
+  display: grid;
 }
 
 .h-full{
@@ -602,12 +647,16 @@ video {
   height: auto;
 }
 
-.w-1\/3{
-  width: 33.333333%;
-}
-
 .w-full{
   width: 100%;
+}
+
+.max-w-xl{
+  max-width: 36rem;
+}
+
+.grid-cols-2{
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .flex-col{
@@ -626,6 +675,10 @@ video {
   justify-content: space-between;
 }
 
+.gap-3{
+  gap: 0.75rem;
+}
+
 .gap-2{
   gap: 0.5rem;
 }
@@ -634,21 +687,17 @@ video {
   gap: 1.5rem;
 }
 
-.rounded-md{
-  border-radius: 0.375rem;
-}
-
-.rounded-sm{
-  border-radius: 0.125rem;
+.rounded-\[4px\]{
+  border-radius: 4px;
 }
 
 .border{
   border-width: 1px;
 }
 
-.border-zinc-200{
+.border-zinc-100{
   --tw-border-opacity: 1;
-  border-color: rgb(228 228 231 / var(--tw-border-opacity));
+  border-color: rgb(244 244 245 / var(--tw-border-opacity));
 }
 
 .border-zinc-700{
@@ -670,6 +719,10 @@ video {
   background-color: rgb(63 63 70 / 0.4);
 }
 
+.p-4{
+  padding: 1rem;
+}
+
 .p-1\.5{
   padding: 0.375rem;
 }
@@ -686,9 +739,29 @@ video {
   padding: 1.5rem;
 }
 
+.px-4{
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .py-6{
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+}
+
+.py-3{
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.px-5{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .py-2{
@@ -699,6 +772,10 @@ video {
 .px-3{
   padding-left: 0.75rem;
   padding-right: 0.75rem;
+}
+
+.pt-0{
+  padding-top: 0px;
 }
 
 .text-center{
@@ -714,9 +791,9 @@ video {
   line-height: 2rem;
 }
 
-.text-3xl{
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+.text-sm{
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
 .text-xl{
@@ -724,8 +801,17 @@ video {
   line-height: 1.75rem;
 }
 
+.font-bold{
+  font-weight: 700;
+}
+
 .font-medium{
   font-weight: 500;
+}
+
+.text-zinc-600{
+  --tw-text-opacity: 1;
+  color: rgb(82 82 91 / var(--tw-text-opacity));
 }
 
 .text-white{
@@ -759,14 +845,39 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.filter{
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+body {
+  background-color: #eff1f5;
+}
+
 .summary {
   background: url('../assets/map.png') no-repeat center;
   background-size: cover;
 }
 
+.province-card {
+  background-color: #fff;
+  box-shadow: 4px 4px 17px rgba(0, 0, 0, 0.04);
+}
+
 @media (min-width: 640px) {
   .summary {
     background-size: contain;
+  }
+}
+
+.hover\:underline:hover{
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+}
+
+@media (min-width: 640px){
+  .sm\:my-10{
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
   }
 
   .sm\:h-\[430px\]{
@@ -783,5 +894,19 @@ video {
 
   .sm\:p-0{
     padding: 0px;
+  }
+
+  .sm\:pt-5{
+    padding-top: 1.25rem;
+  }
+
+  .sm\:pt-20{
+    padding-top: 5rem;
+  }
+}
+
+@media (min-width: 768px){
+  .md\:w-1\/3{
+    width: 33.333333%;
   }
 }
