@@ -6,6 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+    assetModuleFilename: 'assets/[hash][ext][query]'
   },
   devServer: {
     client: {
@@ -31,6 +32,10 @@ module.exports = {
       {
         test: /\.html$/i,
         loader: 'html-loader',
+      },
+      {
+        test: /\.(jpg|png|svg|gif)$/,
+        type: 'asset/resource',
       },
     ],
   },
