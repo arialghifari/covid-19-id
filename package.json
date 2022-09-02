@@ -12,6 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.27.2",
+    "cliui": "^7.0.4",
     "jquery": "^3.6.1"
   },
   "devDependencies": {
